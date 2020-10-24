@@ -21,7 +21,7 @@ class App extends Component {
           {this.list.map((city) => {
             if (city.includes("(India)")) {
               this.i++;
-              return <li key={city + this.i}>{city}</li>;
+              return <li key={"location" + this.i}>{city}</li>;
             }
           })}
         </ol>
