@@ -1,16 +1,33 @@
-import React, {Component, useState} from "react";
-import '../styles/App.css';
+import React, { Component, useState } from "react";
+import "../styles/App.css";
 
 class App extends Component {
-    render() {
-
-        return(
-           <>
-//write your code here
-	</>
-        )
-    }
+  constructor() {
+    super();
+    this.list = [
+      "Goa(India)",
+      "Amsterdam(Netherlands)",
+      "New York(USA)",
+      "Darjeeling(India)",
+      "Tokyo(Japan)",
+      "Lonavala(India)",
+    ];
+    this.i = 0;
+  }
+  render() {
+    return (
+      <>
+        <ol>
+          {this.list.map((city) => {
+            if (city.includes("(India)")) {
+              this.i++;
+              return <li key={city.replace("(India)", "") + this.i}>{city}</li>;
+            }
+          })}
+        </ol>
+      </>
+    );
+  }
 }
-
 
 export default App;
