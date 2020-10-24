@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import "../styles/App.css";
+import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -21,7 +21,7 @@ class App extends Component {
           {this.list.map((city) => {
             if (city.includes("(India)")) {
               this.i++;
-              return <li key={city.replace("(India)", "") + this.i}>{city}</li>;
+              return <li key={"India" + this.i}>{city}</li>;
             }
           })}
         </ol>
